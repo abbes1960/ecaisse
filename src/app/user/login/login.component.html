@@ -1,0 +1,85 @@
+<div class="container col-md-8 justify-content-center">
+    <div class="justify-content-center col-lg-8 ">
+    
+    
+    
+   
+     
+        <div class="justify-content-center">
+            <img src="assets/images/logo.png" class="img-circle " alt="User Image">
+          </div>
+      
+        
+  
+                    <form  [formGroup]="this.loginForm">
+                     
+                           
+                            <div class="auth-box card">
+                                <div class="card-block">
+                                    <div class="col-lg-4 justify-content-center">
+                                        <img src="assets/images/logo-blue.png" class="img-circle " alt="User Image">
+                                      </div>
+                                    <div class="row m-b-20">
+                                        <div class="col-md-12">
+                                            <h3 class="text-center">Sign In</h3>
+                                        </div>
+                                    </div>
+                                    <div class="main_input_box">
+                                        <label>Login</label> 
+                                        <span class="add-on bg_lg"><i class="icon-user"> </i></span>
+                                        <input type="text" class="form-control sty1"  id="username" formControlName="username" placeholder="Taper  your login" required>
+                                     </div>
+                                  
+                                     <div class="form-group">
+                                        <label for="Password">Password</label> 
+                                        <div class="controls">
+                                          <div class="main_input_box">
+                                              <span class="add-on bg_ly"><i class="icon-lock"></i></span>
+                                              <input type="password" class="form-control sty1"  id="password" formControlName="password" placeholder="Taper your Passward" required> 
+                                       </div>  
+                                        </div>
+                                      </div>
+                                    <div class="row m-t-25 text-left">
+                                        <div class="col-12">
+                                            <div class="checkbox-fade fade-in-primary d-">
+                                                <label>
+                                                    <input type="checkbox" value="">
+                                                    <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                    <span class="text-inverse">Remember me</span>
+                                                </label>
+                                            </div>
+                                            <div class="forgot-phone text-right f-right">
+                                                <a href="auth-reset-password.html" class="text-right f-w-600"> Forgot Password?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-t-30">
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20" (click) ="login()">Sign in</button>
+                                        </div>
+                                    </div>
+                                    <hr/>
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <p class="text-inverse text-left m-b-0">Thank you.</p>
+                                            <p class="text-inverse text-left"><a href="index.html"><b>Back to website</b></a></p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <img src="assets/images/auth/Logo-small-bottom.png" alt="small-logo.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    
+               
+             
+            
+            </div>
+          
+          </div>
+          
+
+
+  
+    

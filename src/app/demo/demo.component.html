@@ -1,0 +1,20 @@
+
+<form #myForm="ngForm">
+
+  <div class="col-md-12 col-md-offset-2">
+    <div class="form-group">
+        <label>Date Début : </label>
+        <input type ="date" name="date_debut"  [(ngModel)]="date_debut" required >
+  </div>
+  <div class="form-group">
+    <label>Date Fin :</label>
+    <input type = "date" name="date_fin" [(ngModel)]="date_fin" (change)="diff()">
+  
+</div>
+    <div class="form-group">
+      <label><strong>nbj : </strong></label>
+      <input type ="text" name="nbj" [(ngModel)]="nbj" readonly>
+  </div>
+  
+</div>
+</form>

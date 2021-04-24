@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+  <h1>Liste Sous catégorie</h1>
+</mat-toolbar>
+  <div class="pricing-header mx-auto">
+   <div class="table-responsive">
+    <table class="table table-bordered table-responsive-sm table-responsive-md
+   table-responsive-lg">
+    <thead>
+    <tr>
+    <th scope="col">Code</th>
+     <th scope="col">Libelle </th>
+     <th scope="col">Libelle Catégorie </th>
+     
+    <th class="text-center" scope="col">Action</th>
+    <th>
+        <a class="btn btn-outline-success" (click)="addScategorie()">
+          <i class="fa fa-plus-square"></i> Create New</a>
+    </th>
+    <th>
+      <a class="btn btn-outline-success" (click)="exporToExcel()">
+        <i class="fa fa-plus-square"></i> Export</a>
+  </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of crudApi.list | paginate: { itemsPerPage: 5, currentPage: p }">
+    <td>{{item.code}}</td>
+    <td>{{item.libelle}}</td>
+    <td>{{item.libcateg}}</td>
+    <td class ="hidden">{{item.ccateg}}</td>
+    <td><button class="btn btn-warning"  (click) = "selectData(item)">
+      <i class="fa fa-pencil-square-o" ></i></button></td>
+   <td><button class="btn btn-danger" (click) = "removeData(item.code)">
+      <i class="fa fa-trash-o"></i></button></td>
+       </tr>
+         </tbody>
+         </table>
+         </div>
+         <pagination-controls (pageChange)="p = $event"></pagination-controls>
+       </div>
+
+
+
