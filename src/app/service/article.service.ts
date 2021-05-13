@@ -32,6 +32,7 @@ export class ArticleService {
   }
   createData(formData: FormData): Observable<any> {
 
+    // commentaire
     return this.http.post(`${this.baseUrl}`, formData);
   }
 
