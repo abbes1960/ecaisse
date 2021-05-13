@@ -1,0 +1,95 @@
+<header class="header-section">
+    <nav class="main-navbar">
+        <div class="container">
+            <ul class="main-menu">
+                <li><a href="#">Your Cart</a></li>
+
+            </ul>
+        </div>
+    </nav>
+</header>
+<div style="overflow-y: scroll; height:500px;" class="row justify-content-center">
+    <section>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="cart-table">
+                       
+                        <div class="cart-table-warp">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="product-th">Product</th>
+                                        <th class="quy-th">Quantity</th>
+                                        <th class="size-th">Price</th>
+                                        <th class="total-th">Montant</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of service.list ;let i=index;">
+                                        <td class="product-col">
+                                            <img class="card-img-top img-responsive"
+                                                src="{{this.articleService.host+'/api/Imgarticles/'+item.id}}"
+                                                style="width :80px; height :100px;width:fil-content" alt="">
+                                            <div class="pc-title">
+                                                <h4>{{item.libelle}}</h4>
+                                               
+                                            </div>
+                                        </td>
+
+                                        <td class="quy-col">
+                                            <div class="quantity">
+                                                <div class="pro-qty">
+                                                    <input type="number" [(ngModel)]="item.qte" (change)="calcul()">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="total-col">
+                                            <h4>{{item.pv}}</h4>
+                                        </td>
+                                        <td class="total-col">
+                                            <h4>{{item.qte*item.pv}}</h4>
+                                        </td>
+
+                                        <td>
+                                            <a class="btn btn-sm btn-danger text-white ml-1" (click)="remove(i)">
+                                                <i class="fa fa-trash"></i></a>
+                                        </td>
+
+                                    </tr>
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="total-cost">
+                            <h6>Total <span>{{this.service.totttc}}</span></h6>
+                        </div>
+                        <br>
+                        <br>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <form>
+
+
+        <div class="form-group">
+            <button type="button" class="btn btn-primary mt-2 mt-sm-0 btn-icon-text" (click)="payement()">
+                <i class="mdi mdi-plus-circle"></i> Payement</button>
+            <button type="button" class="btn btn-primary mt-2 mt-sm-0 btn-icon-text" [mat-dialog-close]>
+                <i class="fa fa-close"></i> Continue shopping </button>
+            <button type="button" class="btn btn-primary mt-2 mt-sm-0 btn-icon-text" (click)="vider()">
+                <i class="mdi mdi-plus-circle"></i> Vider Panier </button>
+
+        </div>
+
+    </form>
+</div>

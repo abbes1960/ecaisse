@@ -1,0 +1,47 @@
+<header class="header-section">
+    <nav class="main-navbar">
+        <div class="container">
+      <ul class="main-menu">
+          <li><a href="#">Liste Panier </a></li>
+
+      </ul>
+        </div>
+    </nav>
+</header>
+<div>
+<input type="text" [(ngModel)]="SearchText" class="form-control bg-light border-0 small" placeholder="Recherche..." aria-label="Search" aria-describedby="basic-addon2">
+<table class="table table-hover">
+<thead class="thead-light">
+<th>numero</th>  
+<th>Date </th>
+<th>Nom Client</th>
+<th>Adresse</th>
+<th>Total Ht</th>
+<th>Total Tva</th>
+<th>Total TTC</th>
+</thead>
+<tbody>
+
+<tr *ngFor="let item of Liste | paginate: { itemsPerPage: 3, currentPage: p }">
+<td>{{item.numero}}</td>
+<td>{{item.date_mvt | date:'dd/MM/yyyy'}}</td>
+<td>{{item.nom}}</td>
+<td>{{item.adresse}}</td>
+<td >{{this.decimalPipe.transform(item.totht, this.format)}}</td>
+<td >{{this.decimalPipe.transform(item.tottva, this.format)}}</td>
+<td >{{this.decimalPipe.transform(item.totttc, this.format)}}</td>
+<td>
+<a class="btn text-danger" (click)="selectData(item)"><i class="fa fa-pencil fa-lg"></i> </a>
+</td>
+</tr>
+<div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite"></div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><ul class="pagination"></ul></div></div></div>
+</tbody>
+
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
+
+
+
+

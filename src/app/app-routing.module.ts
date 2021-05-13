@@ -18,7 +18,10 @@ import { AddClientComponent } from './client/add-client/add-client.component';
 import { ListClientComponent } from './client/list-client/list-client.component';
 import { ListFourComponent } from './four/list-four/list-four.component';
 import { AddFourComponent } from './four/add-four/add-four.component';
-
+import { AddPanierComponent } from './panier/add-panier/add-panier.component';
+import { ListPanierComponent } from './panier/list-panier/list-panier.component';
+import { PayementComponent } from './panier/payement/payement.component';
+import { PaypalComponent } from './paypal/paypal.component';
 const routes : Routes = [
     {path: '', component:TemplateComponent,children : [
     {path: 'categories', component: ListCategorieComponent},
@@ -35,11 +38,16 @@ const routes : Routes = [
     {path: 'users', component: ListUserComponent},
     {path: 'articles', component: ListArticleComponent},
     {path: 'article', component: AddArticleComponent},
+    {path: 'paniers', component: ListPanierComponent},
+    {path: 'paypal', component: PaypalComponent},
     
 ]},
-{path: 'register', component: RegisterComponent},
+    {path: 'register', component: RegisterComponent},
     {path: 'login', component: LoginComponent},
-  
+    {path: 'panier', component: AddPanierComponent},
+    
+    {path: 'payement', component: PayementComponent},
+    {path: 'demo', component: DemoComponent},
 
 ];
   @NgModule({

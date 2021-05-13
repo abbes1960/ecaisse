@@ -21,7 +21,7 @@ import { AddScategorieComponent } from './scategorie/add-scategorie/add-scategor
 import { ListScategorieComponent } from './scategorie/list-scategorie/list-scategorie.component';
 import { DemoComponent } from './demo/demo.component';
 import { MomentModule } from 'ngx-moment';
-
+import { NgxPayPalModule } from 'ngx-paypal';
 import { ListUserComponent } from './user/list-user/list-user.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
@@ -32,9 +32,16 @@ import { AddClientComponent } from './client/add-client/add-client.component';
 import { ListClientComponent } from './client/list-client/list-client.component';
 import { ListFourComponent } from './four/list-four/list-four.component';
 import { AddFourComponent } from './four/add-four/add-four.component';
-
+import {DecimalPipe} from '@angular/common';
 import { APP_BASE_HREF } from '@angular/common';
 import { Login1Component } from './user/login1/login1.component';
+import { AddPanierComponent } from './panier/add-panier/add-panier.component';
+import { AddLpanierComponent } from './panier/add-lpanier/add-lpanier.component';
+import { ListPanierComponent } from './panier/list-panier/list-panier.component';
+import { PayementComponent } from './panier/payement/payement.component';
+import { ReglementComponent } from './reglement/reglement.component';
+import { PaypalComponent } from './paypal/paypal.component';
+
 
 const MATERIAL_MODULES = [MatToolbarModule,
   MatIconModule
@@ -61,7 +68,14 @@ const MATERIAL_MODULES = [MatToolbarModule,
     ListClientComponent,
     ListFourComponent,
     AddFourComponent,
-    Login1Component
+    Login1Component,
+    AddPanierComponent,
+    AddLpanierComponent,
+    ListPanierComponent,
+    PayementComponent,
+    ReglementComponent,
+    PaypalComponent,
+    
    
     
   ],
@@ -78,10 +92,11 @@ const MATERIAL_MODULES = [MatToolbarModule,
     MatIconModule,
     NgxPaginationModule,
     MomentModule,
-    MatCardModule
+    MatCardModule,
+    NgxPayPalModule
   ],
   exports : MATERIAL_MODULES,
-  providers: [DatePipe,{ provide: MAT_DIALOG_DATA, useValue: {} ,},{ provide: APP_BASE_HREF, useValue: '' },
+  providers: [DatePipe,DecimalPipe,{ provide: MAT_DIALOG_DATA, useValue: {} ,},{ provide: APP_BASE_HREF, useValue: '' },
     { provide: MatDialogRef, useValue: {} }],
   bootstrap: [AppComponent]
 })

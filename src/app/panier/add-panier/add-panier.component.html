@@ -1,0 +1,99 @@
+<mat-toolbar color="primary">
+  <h1>My Shop</h1>
+</mat-toolbar>
+<div class="horizontal-menu">
+  
+    <div class="container">
+     <div class = "row col-md-12">
+       <div class ="col-md-6">
+  
+          <div class="shopping-card">
+            <img class="card-img-top img-responsive" src="assets/images/panier.png" style="height :60px;width:60px" (click)="panier()"
+              alt="">
+            <span>{{ this.panierService.totttc| currency: 'Dt' }}</span>
+           
+          </div>
+        
+       </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end col-md-6 pull-right">
+       
+        <ul class="navbar-nav navbar-nav-right">
+         
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+              <div class="nav-profile-img">
+                <img src="assets/images/faces/face1.jpg" alt="image" />
+              </div>
+              <div class="nav-profile-text">
+                <p class="text-black font-weight-semibold m-0"> Foulen </p>
+                <span class="font-13 online-color">online <i class="mdi mdi-chevron-down"></i></span>
+              </div>
+            </a>
+            <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+              <a class="dropdown-item" href="#">
+                <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <i class="mdi mdi-logout mr-2 text-primary"></i> Signout </a>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="horizontal-menu-toggle">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+     </div>
+    </div>
+
+ 
+</div>
+  
+  
+  <nav>
+
+  </nav>
+  <div class="row card-deck">
+  
+  
+    <div class="col-lg-3" *ngFor="let item of this.service.list">
+      <div class="card text-center text-lg-lef">
+        <div class="card-header">
+  
+          <h3>{{item.libelle}}</h3>
+        </div>
+        <div class="card-body">
+          <div class="pi-pic">
+  
+            <img class="card-img-top img-responsive" src="{{this.service.host+'/api/Imgarticles/'+item.id}}" 
+            style="height :200px;width:fil-content"
+              alt="">
+  
+          </div>
+  
+          <h5 class="card-title"></h5>
+          <br>
+  
+          <div class="card-header">
+            <h3>Prix : {{item.pv}}</h3>
+          </div>
+         
+          
+  
+          <br>
+          <div class="col-12 padding-0">
+            <button class="btn btn-primary btn-block" (click)="addToCart(item)">
+              Add To Cart
+            </button>
+          </div>
+          <br>
+  
+          <div class="col-12 padding-0">
+            <button class="btn btn-danger btn-block" (click)="Show(item)">
+              Caractristiques
+            </button>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
